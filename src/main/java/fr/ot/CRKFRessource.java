@@ -23,6 +23,7 @@ public class CRKFRessource {
     @GET
     @Path("/classifications")
     public Response getAllClassifications(){
-        return Response.ok(crkfClient.getAllClassifications()).build();
+        System.out.println(crkfClient.getAllClassifications());
+        return Response.ok().build();
     }
 }
