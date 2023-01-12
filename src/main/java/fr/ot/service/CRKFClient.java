@@ -7,8 +7,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 @RegisterRestClient
-@Path("/classifications")
+@Path("/")
 public interface CRKFClient {
     @GET
+    @Path("/classifications")
     Response getAllClassifications();
 }

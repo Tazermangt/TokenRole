@@ -23,6 +23,6 @@ public class CRKFRessource {
     @GET
     @Path("/classifications")
     public Response getAllClassifications(){
-        return Response.ok(crkfClient.getAllClassifications()).build();
+        return Response.ok(crkfClient.getAllClassifications().getEntity()).build();
     }
 }
