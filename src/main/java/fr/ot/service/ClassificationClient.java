@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
 
 @RegisterRestClient
 @Path("/")
-public interface CRKFClient {
+public interface ClassificationClient {
     @GET
     @Path("/")
     Response getAllClassifications();

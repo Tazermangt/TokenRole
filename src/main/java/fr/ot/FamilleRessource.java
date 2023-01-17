@@ -1,6 +1,7 @@
 package fr.ot;
 
-import fr.ot.service.CRKFClient;
+import fr.ot.service.FamilleClient;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -14,15 +15,16 @@ import javax.ws.rs.core.Response;
 @Path("/crkf")
 @Tag(name = "CRKF")
 @Produces(MediaType.APPLICATION_JSON)
-public class CRKFRessource {
+public class FamilleRessource {
 
     @Inject
     @RestClient
-    CRKFClient crkfClient;
+    FamilleClient familleClient;
 
+    @Operation(summary = "", description = "")
     @GET
-    @Path("/classifications")
-    public Response getAllClassifications(){
-        return Response.ok(crkfClient.getAllClassifications().getEntity()).build();
+    @Path("/familles")
+    public Response getAllFamilles() {
+        return Response.ok(familleClient.getAllFamilles().getEntity()).build();
     }
 }
