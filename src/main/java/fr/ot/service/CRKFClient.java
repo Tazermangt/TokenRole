@@ -10,6 +10,6 @@ import javax.ws.rs.core.Response;
 @Path("/")
 public interface CRKFClient {
     @GET
-    @Path("/classifications")
+    @Path("/")
     Response getAllClassifications();
 }
