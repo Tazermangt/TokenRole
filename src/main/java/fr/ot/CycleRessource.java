@@ -1,5 +1,6 @@
 package fr.ot;
 
+import fr.ot.service.CycleClient;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -17,11 +18,11 @@ public class CycleRessource {
 
     @Inject
     @RestClient
-    CycleRessource cycleRessource;
+    CycleClient cycleClient;
 
     @GET
     @Path("/cyles")
     public Response getAllCycles(){
-        return Response.ok(cycleRessource.getAllCycles().getEntity()).build();
+        return Response.ok(cycleClient.getAllCycles().getEntity()).build();
     }
 }
