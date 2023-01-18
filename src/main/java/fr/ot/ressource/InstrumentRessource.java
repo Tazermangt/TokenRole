@@ -1,4 +1,4 @@
-package fr.ot;
+package fr.ot.ressource;
 
 import fr.ot.service.InstrumentClient;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;

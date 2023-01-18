@@ -1,6 +1,6 @@
-package fr.ot;
+package fr.ot.ressource;
 
-import fr.ot.service.AdresseClient;
+import fr.ot.service.EcoleClient;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -14,15 +14,15 @@ import javax.ws.rs.core.Response;
 @Path("/crkf")
 @Tag(name = "CRKF")
 @Produces(MediaType.APPLICATION_JSON)
-public class AdresseRessource {
+public class EcoleRessource {
 
     @Inject
     @RestClient
-    AdresseClient adresseClient;
+    EcoleClient ecoleClient;
 
     @GET
-    @Path("/adresses")
-    public Response getAllAdresses(){
-        return Response.ok(adresseClient.getAllAdresses().getEntity()).build();
+    @Path("/ecoles")
+    public Response getAllEcoles(){
+        return Response.ok(ecoleClient.getAllEcoles().getEntity()).build();
     }
 }

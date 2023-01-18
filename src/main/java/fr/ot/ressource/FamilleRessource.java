@@ -1,6 +1,7 @@
-package fr.ot;
+package fr.ot.ressource;
 
-import fr.ot.service.DepartementClient;
+import fr.ot.service.FamilleClient;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -14,15 +15,16 @@ import javax.ws.rs.core.Response;
 @Path("/crkf")
 @Tag(name = "CRKF")
 @Produces(MediaType.APPLICATION_JSON)
-public class DepartementRessource {
+public class FamilleRessource {
 
     @Inject
     @RestClient
-    DepartementClient departementClient;
+    FamilleClient familleClient;
 
+    @Operation(summary = "", description = "")
     @GET
-    @Path("/departements")
-    public Response getAllDepartements(){
-        return Response.ok(departementClient.getAllDepartements().getEntity()).build();
+    @Path("/familles")
+    public Response getAllFamilles() {
+        return Response.ok(familleClient.getAllFamilles().getEntity()).build();
     }
 }

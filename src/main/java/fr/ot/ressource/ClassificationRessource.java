@@ -1,6 +1,6 @@
-package fr.ot;
+package fr.ot.ressource;
 
-import fr.ot.service.PersonneClient;
+import fr.ot.service.ClassificationClient;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -14,15 +14,15 @@ import javax.ws.rs.core.Response;
 @Path("/crkf")
 @Tag(name = "CRKF")
 @Produces(MediaType.APPLICATION_JSON)
-public class PersonneRessource {
+public class ClassificationRessource {
 
     @Inject
     @RestClient
-    PersonneClient personneClient;
+    ClassificationClient classificationClient;
 
     @GET
-    @Path("/personnes")
-    public Response getAllPersonnes(){
-        return Response.ok(personneClient.getAllPersonnes().getEntity()).build();
+    @Path("/classifications")
+    public Response getAllClassifications(){
+        return Response.ok(classificationClient.getAllClassifications().getEntity()).build();
     }
 }
