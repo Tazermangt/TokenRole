@@ -14,6 +14,7 @@ import javax.ws.rs.core.UriInfo;
 
 @RegisterRestClient
 @Path("/")
+@Produces(MediaType.APPLICATION_JSON)
 public interface ClassificationClient {
     @GET
     @Path("/")

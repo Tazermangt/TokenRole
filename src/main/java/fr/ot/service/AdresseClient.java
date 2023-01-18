@@ -13,6 +13,7 @@ import javax.ws.rs.core.UriInfo;
 
 @RegisterRestClient
 @Path("/")
+@Produces(MediaType.APPLICATION_JSON)
 public interface AdresseClient {
     @GET
     @Path("/")

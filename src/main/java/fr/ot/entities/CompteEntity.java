@@ -1,38 +1,15 @@
 package fr.ot.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import fr.ot.hateoas.HateOas;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Objects;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "Compte", schema = "dbo", catalog = "CRKF")
-public class CompteEntity {
-    @Basic
-    @Id
-    @Column(name = "id_compte")
+@Data
+@JsonPropertyOrder({"idCompte", "email", "password"})
+public class CompteEntity extends HateOas {
     private int idCompte;
-    @Basic
-    @Column(name = "email")
     private String email;
-    @Basic
-    @Column(name = "password")
     private String password;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CompteEntity that = (CompteEntity) o;
-        return idCompte == that.idCompte && Objects.equals(email, that.email) && Objects.equals(password, that.password);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idCompte, email, password);
-    }
-
 }
