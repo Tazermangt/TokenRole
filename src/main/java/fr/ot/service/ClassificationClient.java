@@ -19,23 +19,4 @@ public interface ClassificationClient {
     @GET
     @Path("/")
     Response getAllClassifications();
-
-    @GET
-    @Path("{id}")
-    Response getById(@PathParam("id") Integer id, @Context UriInfo uriInfo);
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Transactional
-    public Response create(ClassificationEntity classification, @Context UriInfo uriInfo);
-
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Transactional
-    public Response update(ClassificationEntity classification, @Context UriInfo uriInfo);
-
-    @DELETE
-    @Path("{id}")
-    @Transactional
-    public Response delete(@PathParam("id") Integer id, @Context UriInfo uriInfo);
 }

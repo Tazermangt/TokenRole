@@ -35,47 +35,4 @@ public class ClassificationRessource {
             return Response.noContent().build();
         }
     }
-    @GET
-    @Path("{id}")
-    public Response getById(@PathParam("id") Integer id, @Context UriInfo uriInfo) {
-        ClassificationEntity classification = (ClassificationEntity) classificationClient.getById(id, uriInfo).getEntity();
-        if (classification != null) {
-            return Response.ok(classification).build();
-        } else {
-            return Response.noContent().build();
-        }
-    }
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Transactional
-    public Response create(ClassificationEntity classification, @Context UriInfo uriInfo) {
-        HateOas hateOas = (HateOas) classificationClient.create(classification, uriInfo).getEntity();
-        if (hateOas != null) {
-            return Response.ok(hateOas).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-    }
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Transactional
-    public Response update(ClassificationEntity classification, @Context UriInfo uriInfo) {
-        HateOas hateOas = (HateOas) classificationClient.update(classification, uriInfo).getEntity();
-        if (hateOas != null) {
-            return Response.ok(hateOas).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-    }
-    @DELETE
-    @Path("{id}")
-    @Transactional
-    public Response delete(@PathParam("id") Integer id, @Context UriInfo uriInfo) {
-        HateOas hateOas = (HateOas) classificationClient.delete(id , uriInfo).getEntity();
-        if (hateOas != null) {
-            return Response.ok(hateOas).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-    }
 }
