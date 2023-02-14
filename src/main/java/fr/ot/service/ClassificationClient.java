@@ -19,4 +19,8 @@ public interface ClassificationClient {
     @GET
     @Path("/")
     Response getAllClassifications();
+
+    @GET
+    @Path("like/{classification}")
+    Response getLikeClassifications(@Context UriInfo uriInfo, @PathParam("classification") String classification);
 }

@@ -28,10 +28,21 @@ public class ClassificationRessource {
     @GET
     @Path("/")
     public Response getAllClassifications(){
-        List<ClassificationEntity> classifications = (List<ClassificationEntity>) classificationClient.getAllClassifications().getEntity();
+        List<ClassificationEntity> classifications = classificationClient.getAllClassifications().readEntity(List.class);
         if(!classifications.isEmpty()){
             return Response.ok(classifications).build();
         }else{
+            return Response.noContent().build();
+        }
+    }
+
+    @GET
+    @Path("like/{classification}")
+    public Response getLikeClassifications(@Context UriInfo uriInfo, @PathParam("classification") String classification){
+        List<ClassificationEntity> classifications = classificationClient.getLikeClassifications(uriInfo, classification).readEntity(List.class);
+        if (!classifications.isEmpty()) {
+            return Response.ok(classifications).build();
+        } else {
             return Response.noContent().build();
         }
     }
