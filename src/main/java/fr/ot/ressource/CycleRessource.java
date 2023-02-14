@@ -11,8 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/crkf")
-@Tag(name = "CRKF")
+@Path("/cyles")
+@Tag(name = "Cyles")
 @Produces(MediaType.APPLICATION_JSON)
 public class CycleRessource {
 
@@ -21,7 +21,7 @@ public class CycleRessource {
     CycleClient cycleClient;
 
     @GET
-    @Path("/cyles")
+    @Path("/")
     public Response getAllCycles(){
         return Response.ok(cycleClient.getAllCycles().getEntity()).build();
     }

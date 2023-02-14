@@ -11,8 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/crkf")
-@Tag(name = "CRKF")
+@Path("/villes")
+@Tag(name = "Villes")
 @Produces(MediaType.APPLICATION_JSON)
 public class VilleRessource {
 
@@ -21,7 +21,7 @@ public class VilleRessource {
     VilleClient villeClient;
 
     @GET
-    @Path("/villes")
+    @Path("/")
     public Response getAllVilles(){
         return Response.ok(villeClient.getAllVilles().getEntity()).build();
     }

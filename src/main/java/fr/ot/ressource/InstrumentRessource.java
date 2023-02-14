@@ -11,8 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/crkf")
-@Tag(name = "CRKF")
+@Path("/instruments")
+@Tag(name = "Instruments")
 @Produces(MediaType.APPLICATION_JSON)
 public class InstrumentRessource {
 
@@ -21,7 +21,7 @@ public class InstrumentRessource {
     InstrumentClient instrumentClient;
 
     @GET
-    @Path("/instruments")
+    @Path("/")
     public Response getAllInstruments(){
         return Response.ok(instrumentClient.getAllInstruments().getEntity()).build();
     }
